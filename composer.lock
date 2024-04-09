@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee132c2f84c02725d0e4f038f126c8ef",
+    "content-hash": "21939382cf543f676c716930830732d6",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -6463,10 +6463,16 @@
         {
             "name": "zaimea/calendar",
             "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./../calendar",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:zaimea/calendar.git",
                 "reference": "7ffe5bb81c18357b10c796f021d6a3c1bab609b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zaimea/calendar/zipball/7ffe5bb81c18357b10c796f021d6a3c1bab609b4",
+                "reference": "7ffe5bb81c18357b10c796f021d6a3c1bab609b4",
+                "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^10.0|^11.0",
@@ -6479,6 +6485,7 @@
                 "orchestra/testbench": "^8.0|^9.0",
                 "pestphp/pest": "^2.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -6516,17 +6523,31 @@
                 "laravel",
                 "livewire"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/zaimea/calendar/tree/main",
+                "issues": "https://github.com/zaimea/calendar/issues"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/Custura"
+                }
+            ],
+            "time": "2024-04-04T08:35:29+00:00"
         },
         {
             "name": "zaimea/charts",
             "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./../charts",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zaimea/charts.git",
                 "reference": "ac7eb834201c5321b877d5960afa0ebbd750c0a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zaimea/charts/zipball/ac7eb834201c5321b877d5960afa0ebbd750c0a0",
+                "reference": "ac7eb834201c5321b877d5960afa0ebbd750c0a0",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -6538,6 +6559,7 @@
                 "orchestra/testbench": "^8.0|^9.0",
                 "phpunit/phpunit": "^10.0|^11.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -6586,17 +6608,31 @@
                 "laravel",
                 "livewire"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/zaimea/charts/tree/main",
+                "issues": "https://github.com/zaimea/charts/issues"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/Custura"
+                }
+            ],
+            "time": "2024-04-06T08:18:18+00:00"
         },
         {
             "name": "zaimea/formed",
             "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./../formed",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:zaimea/formed.git",
                 "reference": "d83f04e8a83f0b9cb4e736e68d329fc241eadf5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zaimea/formed/zipball/d83f04e8a83f0b9cb4e736e68d329fc241eadf5c",
+                "reference": "d83f04e8a83f0b9cb4e736e68d329fc241eadf5c",
+                "shasum": ""
             },
             "require": {
                 "dompdf/dompdf": "^2.0",
@@ -6615,6 +6651,7 @@
                 "pestphp/pest-plugin-laravel": "^2.0",
                 "vimeo/psalm": "^5.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -6662,17 +6699,31 @@
                 "reports",
                 "searches"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/zaimea/formed/tree/main",
+                "issues": "https://github.com/zaimea/formed/issues"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/Custura"
+                }
+            ],
+            "time": "2024-04-08T18:35:50+00:00"
         },
         {
             "name": "zaimea/heroicons",
             "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./../heroicons",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zaimea/heroicons.git",
                 "reference": "2ffa6c6d39b8748d2038e71772956e15b21825fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zaimea/heroicons/zipball/2ffa6c6d39b8748d2038e71772956e15b21825fd",
+                "reference": "2ffa6c6d39b8748d2038e71772956e15b21825fd",
+                "shasum": ""
             },
             "require": {
                 "php": "^8.2"
@@ -6682,6 +6733,7 @@
                 "orchestra/testbench": "^8.0|^9.0",
                 "pestphp/pest": "^2.0"
             },
+            "default-branch": true,
             "bin": [
                 "bin/heroicons"
             ],
@@ -6723,17 +6775,31 @@
                 "icons",
                 "laravel"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/zaimea/heroicons/tree/main",
+                "issues": "https://github.com/zaimea/heroicons/issues"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/Custura"
+                }
+            ],
+            "time": "2024-04-06T08:14:22+00:00"
         },
         {
             "name": "zaimea/zaimea",
             "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./../zaimea",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:zaimea/zaimea.git",
                 "reference": "a51f7433f560e2281cf1ca52673377436150ef03"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zaimea/zaimea/zipball/a51f7433f560e2281cf1ca52673377436150ef03",
+                "reference": "a51f7433f560e2281cf1ca52673377436150ef03",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -6756,6 +6822,7 @@
                 "phpstan/phpstan": "^1.10|^1.47",
                 "phpunit/phpunit": "^10.1|^11.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -6794,9 +6861,17 @@
             "keywords": [
                 "zaimea"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/zaimea/zaimea/tree/main",
+                "issues": "https://github.com/zaimea/zaimea/issues"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/Custura"
+                }
+            ],
+            "time": "2024-04-08T18:54:14+00:00"
         }
     ],
     "packages-dev": [

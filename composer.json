@@ -1,8 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "zaimea/zaimea.com",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Our company Website.",
+    "keywords": [
+        "zaimea",
+        "timetracker",
+        "calendar"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
@@ -10,7 +14,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
-        "zaimea/zaimea": "dev-main"
+        "zaimea/zaimea": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -23,24 +27,24 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "./../zaimea"
+            "type": "vcs",
+            "url": "https://github.com/zaimea/zaimea"
         },
         {
-            "type": "path",
-            "url": "./../formed"
+            "type": "vcs",
+            "url": "https://github.com/zaimea/formed"
         },
         {
-            "type": "path",
-            "url": "./../charts"
+            "type": "vcs",
+            "url": "https://github.com/zaimea/charts"
         },
         {
-            "type": "path",
-            "url": "./../calendar"
+            "type": "vcs",
+            "url": "https://github.com/zaimea/calendar"
         },
         {
-            "type": "path",
-            "url": "./../heroicons"
+            "type": "vcs",
+            "url": "https://github.com/zaimea/heroicons"
         }
     ],
     "autoload": {
@@ -86,6 +90,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
