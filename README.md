@@ -50,6 +50,4 @@ If you want to work on this project on your local machine, you may follow the in
 
 ## Check Zaimea documentation
 
-Visit [Zaimea Developers Documentation](https://developers.zaimea.com)
-Or
-Visit [Zaimea Documentation](https://docs.zaimea.com) to readd U
+Visit [Zaimea Developers Documentation](https://developers.zaimea.com) or [Zaimea Documentation](https://docs.zaimea.com) to read full documentation.
