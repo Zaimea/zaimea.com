@@ -10,20 +10,20 @@ class CalendarRouteTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_user_can_get_the_calendar_route_for_team_belongs_to()
+    public function test_user_can_get_the_calendar_route_for_group_belongs_to()
     {
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::factory()->withPersonalGroup()->create());
 
-        $response = $this->get('team/'. $user->currentTeam->id .'/calendar');
+        $response = $this->get('group/'. $user->currentGroup->id .'/calendar');
         $response->assertStatus(200);
     }
 
-    public function test_user_cannot_get_the_calendar_route_for_other_team()
+    public function test_user_cannot_get_the_calendar_route_for_other_group()
     {
-        $this->actingAs(User::factory()->withPersonalTeam()->create());
-        $otherUser = User::factory()->withPersonalTeam()->create();
+        $this->actingAs(User::factory()->withPersonalGroup()->create());
+        $otherUser = User::factory()->withPersonalGroup()->create();
 
-        $response = $this->get('team/'. $otherUser->currentTeam->id .'/calendar');
+        $response = $this->get('group/'. $otherUser->currentGroup->id .'/calendar');
         $response->assertStatus(403);
     }
 }

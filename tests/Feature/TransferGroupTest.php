@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
-use App\Models\Team;
+use App\Models\Group;
 use App\Models\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\ValidationException;
-use Zaimea\Actions\Zaimea\Panel\Team\Setting\TransferTeam;
-use Zaimea\Actions\Zaimea\Panel\Team\Setting\ValidateTeamTransfer;
-use Zaimea\Models\Team\Membership;
-use Zaimea\Policies\TeamPolicy;
+use Zaimea\Actions\Zaimea\Panel\Group\Setting\TransferGroup;
+use Zaimea\Actions\Zaimea\Panel\Group\Setting\ValidateGroupTransfer;
+use Zaimea\Models\Group\Membership;
+use Zaimea\Policies\GroupPolicy;
 use Zaimea\Zaimea;
 use Tests\TestCase;
 
-class TransferTeamTest extends TestCase
+class TransferGroupTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -23,12 +23,12 @@ class TransferTeamTest extends TestCase
     {
         parent::defineEnvironment($app);
 
-        Gate::policy(Team::class, TeamPolicy::class);
+        Gate::policy(Group::class, GroupPolicy::class);
         Zaimea::useUserModel(User::class);
         Zaimea::useMembershipModel(Membership::class);
     }
 
-    public function test_team_can_be_transferred()
+    public function test_group_can_be_transferred()
     {
         $user = User::forceCreate([
             'name' => 'Custura Laurentiu',
@@ -36,25 +36,25 @@ class TransferTeamTest extends TestCase
             'password' => 'secret',
         ]);
 
-        $team = $user->ownedTeams()->create([
-            'name' => 'Test Team',
-            'personal_team' => false,
+        $group = $user->ownedGroups()->create([
+            'name' => 'Test Group',
+            'personal_group' => false,
         ]);
 
-        $team->users()->attach($otherUser = User::forceCreate([
+        $group->users()->attach($otherUser = User::forceCreate([
             'name' => 'Zaimea',
             'email' => 'zaimea@custura.de',
             'password' => 'secret',
         ]), ['role' => 'admin']);
 
-        $action = new TransferTeam;
+        $action = new TransferGroup;
 
-        $action->transfer($team->owner, $team, $otherUser);
+        $action->transfer($group->owner, $group, $otherUser);
 
-        $this->assertEquals($otherUser->id, $team->owner->id);
+        $this->assertEquals($otherUser->id, $group->owner->id);
     }
 
-    public function test_team_transfer_can_be_validated()
+    public function test_group_transfer_can_be_validated()
     {
         $user = User::forceCreate([
             'name' => 'Custura Laurentiu',
@@ -62,19 +62,19 @@ class TransferTeamTest extends TestCase
             'password' => 'secret',
         ]);
 
-        $team = $user->ownedTeams()->create([
-            'name' => 'Test Team',
-            'personal_team' => false,
+        $group = $user->ownedGroups()->create([
+            'name' => 'Test Group',
+            'personal_group' => false,
         ]);
 
-        $action = new ValidateTeamTransfer;
+        $action = new ValidateGroupTransfer;
 
-        $action->validate($team->owner, $team);
+        $action->validate($group->owner, $group);
 
         $this->assertTrue(true);
     }
 
-    public function test_personal_team_cant_be_transferred()
+    public function test_personal_group_cant_be_transferred()
     {
         $this->expectException(ValidationException::class);
 
@@ -84,17 +84,17 @@ class TransferTeamTest extends TestCase
             'password' => 'secret',
         ]);
 
-        $team = $user->ownedTeams()->create([
-            'name' => 'Test Team',
-            'personal_team' => true,
+        $group = $user->ownedGroups()->create([
+            'name' => 'Test Group',
+            'personal_group' => true,
         ]);
 
-        $action = new ValidateTeamTransfer;
+        $action = new ValidateGroupTransfer;
 
-        $action->validate($team->owner, $team);
+        $action->validate($group->owner, $group);
     }
 
-    public function test_non_owner_cant_transfer_team()
+    public function test_non_owner_cant_transfer_group()
     {
         $this->expectException(AuthorizationException::class);
 
@@ -106,17 +106,17 @@ class TransferTeamTest extends TestCase
             'password' => 'secret',
         ]);
 
-        $team = $user->ownedTeams()->create([
-            'name' => 'Test Team',
-            'personal_team' => false,
+        $group = $user->ownedGroups()->create([
+            'name' => 'Test Group',
+            'personal_group' => false,
         ]);
 
-        $action = new ValidateTeamTransfer;
+        $action = new ValidateGroupTransfer;
 
         $action->validate(User::forceCreate([
             'name' => 'Zaimea',
             'email' => 'zaimea@custura.de',
             'password' => 'secret',
-        ]), $team);
+        ]), $group);
     }
 }

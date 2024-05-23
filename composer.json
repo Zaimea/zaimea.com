@@ -14,7 +14,8 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
-        "zaimea/zaimea": "*"
+        "zaimea/zaimea": "*",
+        "zaimea/seeder_laravel_production": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
@@ -28,24 +29,28 @@
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/zaimea/zaimea"
+            "type": "path",
+            "url": "./../zaimea"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/zaimea/formed"
+            "type": "path",
+            "url": "./../formed"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/zaimea/charts"
+            "type": "path",
+            "url": "./../charts"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/zaimea/calendar"
+            "type": "path",
+            "url": "./../calendar"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/zaimea/heroicons"
+            "type": "path",
+            "url": "./../heroicons"
+        },
+        {
+            "type": "path",
+            "url": "./../seeder_laravel_production"
         }
     ],
     "autoload": {

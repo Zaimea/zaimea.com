@@ -15,7 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \Zaimea\Http\Middleware\User\ZaimeaUser::class,
             \Zaimea\Http\Middleware\User\LanguageSwitcher::class,
-            \Zaimea\Http\Middleware\Team\ZaimeaTeam::class,
+            \Zaimea\Http\Middleware\Group\ZaimeaGroup::class,
         ]);
 
         //

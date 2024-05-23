@@ -5,13 +5,13 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
-class ManageLayout extends Component
+class UserLayout extends Component
 {
     /**
      * Get the view / contents that represents the component.
      */
     public function render(): View
     {
-        return view('zaimeaview::layouts.manage');
+        return view('zaimeaview::layouts.user');
     }
 }
