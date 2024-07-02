@@ -22,7 +22,7 @@ class LeaveGroupTest extends TestCase
 
         $this->actingAs($otherUser);
 
-        $component = Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
+        Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
             ->call('leaveGroup');
 
         $this->assertCount(0, $user->currentGroup->fresh()->users);
@@ -32,7 +32,7 @@ class LeaveGroupTest extends TestCase
     {
         $this->actingAs($user = User::factory()->withPersonalGroup()->create());
 
-        $component = Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
+        Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
             ->call('leaveGroup')
             ->assertHasErrors(['group']);
 

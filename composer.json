@@ -4,6 +4,13 @@
     "description": "Our company Website.",
     "keywords": [
         "zaimea",
+        "scheduler",
+        "work",
+        "time",
+        "tracker",
+        "projects",
+        "team",
+        "manage",
         "timetracker",
         "calendar"
     ],
@@ -14,8 +21,8 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
-        "zaimea/zaimea": "*",
-        "zaimea/seeder_laravel_production": "*"
+        "zaimea/seeder_laravel_production": "*",
+        "zaimea/zaimea": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
@@ -29,28 +36,49 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "./../zaimea"
+            "type": "vcs",
+            "url": "https://github.com/zaimea/zaimea"
         },
         {
-            "type": "path",
-            "url": "./../formed"
+            "type": "vcs",
+            "url": "https://github.com/zaimealabs/aggregate"
         },
         {
-            "type": "path",
-            "url": "./../charts"
+            "type": "vcs",
+            "url": "https://github.com/zaimealabs/charts"
         },
         {
-            "type": "path",
-            "url": "./../calendar"
+            "type": "vcs",
+            "url": "https://github.com/zaimealabs/helpers"
         },
         {
-            "type": "path",
-            "url": "./../heroicons"
+
+            "type": "vcs",
+            "url": "https://github.com/zaimealabs/heroicons"
         },
         {
-            "type": "path",
-            "url": "./../seeder_laravel_production"
+            "type": "vcs",
+            "url": "https://github.com/zaimealabs/metrics"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/zaimealabs/pdf"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/zaimealabs/ranks"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/zaimealabs/searches"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/zaimealabs/sluggable"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/zaimea/seeder_laravel_production"
         }
     ],
     "autoload": {

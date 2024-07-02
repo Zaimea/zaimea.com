@@ -25,7 +25,7 @@ class DeleteGroupTest extends TestCase
             $otherUser = User::factory()->create(), ['role' => 'test-role']
         );
 
-        $component = Livewire::test(DeleteGroupForm::class, ['group' => $group->fresh()])
+        Livewire::test(DeleteGroupForm::class, ['group' => $group->fresh()])
             ->call('deleteGroup');
 
         $this->assertNull($group->fresh());
@@ -36,7 +36,7 @@ class DeleteGroupTest extends TestCase
     {
         $this->actingAs($user = User::factory()->withPersonalGroup()->create());
 
-        $component = Livewire::test(DeleteGroupForm::class, ['group' => $user->currentGroup])
+        Livewire::test(DeleteGroupForm::class, ['group' => $user->currentGroup])
             ->call('deleteGroup')
             ->assertHasErrors(['group']);
 

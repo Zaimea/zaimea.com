@@ -14,7 +14,7 @@ class CalendarRouteTest extends TestCase
     {
         $this->actingAs($user = User::factory()->withPersonalGroup()->create());
 
-        $response = $this->get('group/'. $user->currentGroup->id .'/calendar');
+        $response = $this->get('calendar/'. $user->currentGroup->slug);
         $response->assertStatus(200);
     }
 
@@ -23,7 +23,7 @@ class CalendarRouteTest extends TestCase
         $this->actingAs(User::factory()->withPersonalGroup()->create());
         $otherUser = User::factory()->withPersonalGroup()->create();
 
-        $response = $this->get('group/'. $otherUser->currentGroup->id .'/calendar');
+        $response = $this->get('calendar/'. $otherUser->currentGroup->slug);
         $response->assertStatus(403);
     }
 }

@@ -20,7 +20,7 @@ class UpdateGroupMemberRoleTest extends TestCase
             $otherUser = User::factory()->create(), ['role' => 'admin']
         );
 
-        $component = Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
+        Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
             ->set('managingRoleFor', $otherUser)
             ->set('currentRole', 'editor')
             ->call('updateRole');
@@ -40,7 +40,7 @@ class UpdateGroupMemberRoleTest extends TestCase
 
         $this->actingAs($otherUser);
 
-        $component = Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
+        Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
             ->set('managingRoleFor', $otherUser)
             ->set('currentRole', 'editor')
             ->call('updateRole')

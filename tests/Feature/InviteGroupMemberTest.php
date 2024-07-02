@@ -27,7 +27,7 @@ class InviteGroupMemberTest extends TestCase
 
         $this->actingAs($user = User::factory()->withPersonalGroup()->create());
 
-        $component = Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
+        Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
             ->set('addGroupMemberForm', [
                 'email' => 'test@example.com',
                 'role' => 'admin',

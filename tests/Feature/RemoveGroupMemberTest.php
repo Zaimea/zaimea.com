@@ -20,7 +20,7 @@ class RemoveGroupMemberTest extends TestCase
             $otherUser = User::factory()->create(), ['role' => 'admin']
         );
 
-        $component = Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
+        Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
             ->set('groupMemberIdBeingRemoved', $otherUser->id)
             ->call('removeGroupMember');
 
@@ -37,7 +37,7 @@ class RemoveGroupMemberTest extends TestCase
 
         $this->actingAs($otherUser);
 
-        $component = Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
+        Livewire::test(GroupMemberManager::class, ['group' => $user->currentGroup])
             ->set('groupMemberIdBeingRemoved', $user->id)
             ->call('removeGroupMember')
             ->assertStatus(403);

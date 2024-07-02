@@ -73,7 +73,7 @@ class TicketTest extends TestCase
             ]])
             ->call('create');
 
-        $component = Livewire::test(TicketShow::class, ['ticket' => $user->fresh()->tickets->first()])
+        Livewire::test(TicketShow::class, ['ticket' => $user->fresh()->tickets->first()])
             ->assertStatus(200)
             ->assertSee('Test Read Ticket');
     }

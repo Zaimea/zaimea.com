@@ -9,8 +9,7 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './vendor/zaimea/zaimea/**/*.blade.php',
-        './vendor/zaimea/charts/**/*.blade.php',
-        './vendor/zaimea/calendar/**/*.blade.php',
+        './vendor/zaimealabs/charts/**/*.blade.php',
     ],
     darkMode: 'class',
     theme: {
