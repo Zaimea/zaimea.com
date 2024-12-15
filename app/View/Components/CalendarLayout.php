@@ -12,6 +12,6 @@ class CalendarLayout extends Component
      */
     public function render(): View
     {
-        return view('zaimeaview::layouts.calendar');
+        return view('view::layouts.calendar');
     }
 }

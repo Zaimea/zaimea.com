@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use App\Models\User;
@@ -34,7 +36,7 @@ class PasswordResetTest extends TestCase
 
         $user = User::factory()->create();
 
-        $this->post('/forgot-password', [
+        $response = $this->post('/forgot-password', [
             'email' => $user->email,
         ]);
 
@@ -51,7 +53,7 @@ class PasswordResetTest extends TestCase
 
         $user = User::factory()->create();
 
-        $this->post('/forgot-password', [
+        $response = $this->post('/forgot-password', [
             'email' => $user->email,
         ]);
 
@@ -74,7 +76,7 @@ class PasswordResetTest extends TestCase
 
         $user = User::factory()->create();
 
-        $this->post('/forgot-password', [
+        $response = $this->post('/forgot-password', [
             'email' => $user->email,
         ]);
 

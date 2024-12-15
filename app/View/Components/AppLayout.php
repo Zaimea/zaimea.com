@@ -12,6 +12,6 @@ class AppLayout extends Component
      */
     public function render(): View
     {
-        return view('zaimeaview::layouts.app');
+        return view('view::layouts.app');
     }
 }

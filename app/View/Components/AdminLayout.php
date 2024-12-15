@@ -12,6 +12,6 @@ class AdminLayout extends Component
      */
     public function render(): View
     {
-        return view('zaimeaview::layouts.admin');
+        return view('view::layouts.admin');
     }
 }

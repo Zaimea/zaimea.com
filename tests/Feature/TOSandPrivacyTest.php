@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use Tests\TestCase;
@@ -11,7 +13,7 @@ class TOSandPrivacyTest extends TestCase
         $response = $this->get('/terms-of-service');
 
         $response->assertStatus(200);
-        $response->assertViewIs('zaimeaview::pages.terms');
+        $response->assertViewIs('view::pages.terms');
     }
 
     public function test_can_get_the_route_privacy()
@@ -19,6 +21,6 @@ class TOSandPrivacyTest extends TestCase
         $response = $this->get('/privacy-policy');
 
         $response->assertStatus(200);
-        $response->assertViewIs('zaimeaview::pages.policy');
+        $response->assertViewIs('view::pages.policy');
     }
 }

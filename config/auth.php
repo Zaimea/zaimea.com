@@ -97,6 +97,15 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+        //new cache driver
+        //'customers' => [
+        //    'driver'   => 'cache',
+        //    'store'    => 'passwords',
+        //    'provider' => 'customers',
+        //    'expire'   => 60,
+        //    'throttle' => 60,
+        //],
     ],
 
     /*

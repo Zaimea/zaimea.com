@@ -12,6 +12,6 @@ class ClientLayout extends Component
      */
     public function render(): View
     {
-        return view('zaimeaview::layouts.client');
+        return view('view::layouts.client');
     }
 }

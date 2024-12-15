@@ -12,6 +12,6 @@ class GuestLayout extends Component
      */
     public function render(): View
     {
-        return view('zaimeaview::layouts.guest');
+        return view('view::layouts.guest');
     }
 }

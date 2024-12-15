@@ -12,6 +12,6 @@ class GroupLayout extends Component
      */
     public function render(): View
     {
-        return view('zaimeaview::layouts.group');
+        return view('view::layouts.group');
     }
 }

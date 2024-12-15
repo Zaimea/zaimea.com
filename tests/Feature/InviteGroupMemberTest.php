@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use App\Models\User;
@@ -34,6 +36,7 @@ class InviteGroupMemberTest extends TestCase
                 'client_id' => null,
                 'rate' => '00:00',
                 'quota_percent' => 100,
+                'working_days' => json_decode('{"monday": true, "tuesday": true, "wednesday": true, "thursday": true, "friday": true, "saturday": false, "sunday": false}'),
                 'status' => 1,
             ])->call('addGroupMember');
 
@@ -62,6 +65,7 @@ class InviteGroupMemberTest extends TestCase
                 'client_id' => null,
                 'rate' => '00:00',
                 'quota_percent' => 100,
+                'working_days' => json_decode('{"monday": true, "tuesday": true, "wednesday": true, "thursday": true, "friday": true, "saturday": false, "sunday": false}'),
                 'status' => 1,
             ])->call('addGroupMember');
 

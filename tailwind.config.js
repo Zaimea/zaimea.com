@@ -11,6 +11,11 @@ export default {
         './vendor/zaimea/zaimea/**/*.blade.php',
         './vendor/zaimealabs/charts/**/*.blade.php',
     ],
+    safelist: [
+        'ltr:origin-top-left', 'rtl:origin-top-right', 'ltr:origin-top-right', 'rtl:origin-top-left',
+        'origin-top', 'start-0', 'end-0',
+        'w-48', 'w-60', 'w-full', 'min-w-36', 'min-w-48', 'min-w-60'
+    ],
     darkMode: 'class',
     theme: {
         extend: {

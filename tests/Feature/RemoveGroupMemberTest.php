@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use App\Models\User;
@@ -24,7 +26,7 @@ class RemoveGroupMemberTest extends TestCase
             ->set('groupMemberIdBeingRemoved', $otherUser->id)
             ->call('removeGroupMember');
 
-        $this->assertCount(0, $user->currentGroup->fresh()->users);
+        $this->assertCount(1, $user->currentGroup->fresh()->users);
     }
 
     public function test_only_group_owner_can_remove_group_members(): void

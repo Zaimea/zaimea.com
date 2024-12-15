@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('zaimeaview::pages.welcome');
+    return view('view::pages.welcome');
 });
 
 Route::middleware([
@@ -12,6 +12,6 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('zaimeaview::pages.dashboard');
+        return view('view::pages.dashboard');
     })->name('dashboard');
 });

@@ -12,6 +12,6 @@ class UserLayout extends Component
      */
     public function render(): View
     {
-        return view('zaimeaview::layouts.user');
+        return view('view::layouts.user');
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
 
 use App\Models\User;
@@ -9,10 +11,38 @@ use Livewire\Livewire;
 use Zaimea\Features;
 use Zaimea\Livewire\User\ApiTokenManager;
 use Tests\TestCase;
+use Zaimea\Zaimea;
 
 class ApiTokenPermissionsTest extends TestCase
 {
     use RefreshDatabase;
+
+    protected function defineEnvironment($app)
+    {
+        parent::defineEnvironment($app);
+
+        Zaimea::defaultApiTokenPermissions(['read']);
+
+        Zaimea::role('owner', 'Owner', null, [
+            'create',
+            'read',
+            'update',
+            'delete',
+        ])->description('Owner users can perform any action.');
+
+        Zaimea::role('admin', 'Administrator', null, [
+            'create',
+            'read',
+            'update',
+            'delete',
+        ])->description('Administrator users can perform any action.');
+
+        Zaimea::role('editor', 'Editor', null, [
+            'read',
+            'create',
+            'update',
+        ])->description('Editor users have the ability to read, create, and update.');
+    }
 
     public function test_api_token_permissions_can_be_updated(): void
     {
